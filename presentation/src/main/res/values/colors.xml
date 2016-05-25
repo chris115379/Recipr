@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#125688</color>
+	<color name="colorPrimaryDark">#0a3e64</color>
+	<color name="textColorPrimary">#FFFFFF</color>
+	<color name="textColorPrimaryDark">#333333</color>
+	<color name="windowBackground">#FFFFFF</color>
+	<color name="navigationBarColor">#000000</color>
+	<color name="colorAccent">#dd1556</color>
+
+
+	<color name="colorControlHighlight">@color/fifty_percent_transparency_grey_400</color>
+	<color name="fifty_percent_transparency_grey_400">#80bdbdbd</color>
+	<color name="grey_500">#9e9e9e</color>
+	<color name="grey_700">#616161</color>
+</resources>

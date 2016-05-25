@@ -1,0 +1,98 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+
+  def globalConfiguration = rootProject.extensions.getByName("ext")
+
+  compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+  buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
+
+  defaultConfig {
+    minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
+    targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
+
+    applicationId globalConfiguration.getAt("androidApplicationId")
+    versionCode globalConfiguration.getAt("androidVersionCode")
+    versionName globalConfiguration.getAt("androidVersionName")
+    testApplicationId globalConfiguration.getAt("testApplicationId")
+  }
+
+    compileOptions {
+        incremental false
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        disable 'InvalidPackage'            //Some libraries have issues with this.
+        disable 'OldTargetApi'              //Lint gives this warning but SDK 20 would be Android L Beta.
+        disable 'IconDensities'             //For testing purpose. This is safe to remove.
+        disable 'IconMissingDensityFolder'  //For testing purpose. This is safe to remove.
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../keystore.jks")
+            storePassword "keystore"
+            keyAlias "recipr"
+            keyPassword "recipr"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+        debug {
+        }
+    }
+}
+
+dependencies {
+    def presentationDependencies = rootProject.ext.presentationDependencies
+    def presentationTestDependencies = rootProject.ext.presentationTestDependencies
+
+    compile project(':domain')
+    compile project(':data')
+
+    compile presentationDependencies.appcompat
+    compile presentationDependencies.design
+    compile presentationDependencies.recyclerView
+    compile presentationDependencies.gridlayout
+    compile presentationDependencies.cardView
+    compile presentationDependencies.androidAnnotations
+    compile presentationDependencies.support
+
+    compile presentationDependencies.playServicesAuth
+    compile presentationDependencies.playServicesAnalytics
+
+    apt presentationDependencies.daggerCompiler
+    compile presentationDependencies.dagger
+    apt presentationDependencies.butterKnifeCompiler
+    compile presentationDependencies.butterKnife
+
+    compile presentationDependencies.rxJava
+    compile presentationDependencies.rxAndroid
+
+    provided presentationDependencies.lombok
+    apt presentationDependencies.lombok
+
+    compile presentationDependencies.glide
+    compile presentationDependencies.rxPaparazzo
+
+    provided presentationDependencies.javaxAnnotation
+    compile presentationDependencies.compartment
+
+    androidTestCompile presentationTestDependencies.mockito
+    androidTestCompile presentationTestDependencies.espresso
+    androidTestCompile presentationDependencies.androidAnnotations
+
+//    LinearListView
+    compile presentationDependencies.linearListView
+}
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,26 @@
+<FrameLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<android.support.v7.widget.RecyclerView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/rv_categories_overview"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:scrollbarStyle="outsideOverlay"
+	android:verticalScrollbarPosition="right"
+	android:padding="4dp"
+	/>
+
+<TextView
+	android:id="@+id/categories_overview_empty_view"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center|top"
+	android:visibility="gone"
+	android:padding="32dp"
+	android:text="@string/favorites_overview_empty_message"/>
+
+</FrameLayout>

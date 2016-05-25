@@ -8,10 +8,10 @@ CHRISTOPH HENNEMANN
 
 
 ### Description
-Recipr is an application which enables users to manage their personal recipes. They can add new recipes by entering the required ingredients and the steps to perform. Additionally, they have to provide a name and a category which allows for better organization and search ability. Optionally the user can add an image of his cooking performance to help him to decide what to eat next in the future.
+Recipr is an application which enables users to manage their personal recipes. They can add new recipes by entering the required steps and the steps to perform. Additionally, they have to provide a name and a category which allows for better organization and search ability. Optionally the user can add an image of his cooking performance to help him to decide what to eat next in the future.
 When opened, Recipr presents the user a list of his favorite recipes alphabetically sorted. A swipe to the left reveals all recipes ordered into categories. With this approach the user can fast skim through the available categories to select the flavor for his upcoming meal. He is then presented with a sorted list of all available recipes of this category.
 
-The detail view of one recipe is powered by a full-fledged image (if present) that helps the imagination. Also the user can see his rating of his previous cooking adventures with this recipe for better reference.
+The detail view of one recipe is powered by a full-fledged image (if present) that helps the imagination. Also the user can see his favorite of his previous cooking adventures with this recipe for better reference.
 
 If the user wants to he can login in with his Google Account. This enables Recipr to send the recipes to a server to sync them across all devices of the user. Therefore, the user is prompted to login at the first app start. If not wished the user can always skip the sign in process to use Recipr only locally. Sync can be enabled at any later time.
 
@@ -58,19 +58,19 @@ The view the user is presented with when clicking on the ‘more’ option of a 
 
 <img src="https://github.com/chennemann/Recipr/blob/master/externalResources/screen4.png" width="480px" />
 
-Detail view of a single recipe. Divided into three separate sections. At the top the user finds the title, the category, his rating and a full-fledged image of the recipe. Below the ingredients with their respective quantities are listed. And last but not least the Steps to create the meal are listed at the bottom. The user has the ability to rate this recipe and can mark it as one of his favorites.
+Detail view of a single recipe. Divided into three separate sections. At the top the user finds the searchedRecipeName, the category, his favorite and a full-fledged image of the recipe. Below the steps with their respective quantities are listed. And last but not least the Steps to create the meal are listed at the bottom. The user has the ability to rate this recipe and can mark it as one of his favorites.
 
 ##### Screen 5 - Add new recipe
 
 <img src="https://github.com/chennemann/Recipr/blob/master/externalResources/screen5.png" width="480px" />
 
-The screen to add a new recipe asks the user to provide some meta information (such as title and category) for every recipe first. After that the user can add ingredients and steps to complete the recipe. Also he is able to take a picture and assign it to the recipe.
+The screen to add a new recipe asks the user to provide some meta information (such as searchedRecipeName and category) for every recipe first. After that the user can add steps and steps to complete the recipe. Also he is able to take a picture and assign it to the recipe.
 
 ##### Screen 6 - Add step
 
 <img src="https://github.com/chennemann/Recipr/blob/master/externalResources/screen6.png" width="480px" />
 
-Since adding a step requires some more information the user is presented with a dialog where he can enter a title for the step (such as “preparation”) and a detailed instruction.
+Since adding a step requires some more information the user is presented with a dialog where he can enter a searchedRecipeName for the step (such as “preparation”) and a detailed instruction.
 
 ##### Screen 7 - Favorites (Tablet)
 

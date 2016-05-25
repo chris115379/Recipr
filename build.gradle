@@ -1,12 +1,28 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: 'buildsystem/dependencies.gradle'
 
-allprojects {
+buildscript {
     repositories {
         jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.0'
+        classpath 'com.google.gms:google-services:3.0.0'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+allprojects {
+    ext {
+        androidApplicationId = 'de.androidbytes.recipr'
+        testApplicationId = 'de.androidbytes.recipr.test'
+        androidVersionCode = 1
+        androidVersionName = "1.0"
+        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.11'
-    distributionUrl = 'https://services.gradle.org/distributions/gradle-2.11-all.zip'
+    gradleVersion = '2.13'
+    distributionUrl = 'https://services.gradle.org/distributions/gradle-2.13-all.zip'
 }
